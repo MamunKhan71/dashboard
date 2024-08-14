@@ -98,8 +98,8 @@ export default function RightContainer() {
                                         <TableContents type={"Quiz- 2"} due={"5 Aug 2024"} faculty={"Jhon Ab"} status={"Coming"} />
                                         <TableContents type={"Last Class"} due={"5 June 2024"} faculty={"Kabir Same"} status={"Done"} />
                                         <TableContents type={"Quiz- 2"} due={"5 June 2024"} faculty={"Lee Jhon"} status={"Coming"} />
-                                        <TableContents type={"Assignment -4"} due={"5 June 2024"} faculty={"Abraham Leo"} status={"Dpne"} />
-                                        <TableContents type={"Last Class"} due={"5 June 2024"} faculty={"Atik Saw"} status={"Dpne"} />
+                                        <TableContents type={"Assignment -4"} due={"5 June 2024"} faculty={"Abraham Leo"} status={"Done"} />
+                                        <TableContents type={"Last Class"} due={"5 June 2024"} faculty={"Atik Saw"} status={"Done"} />
 
                                     </tbody>
                                 </table>

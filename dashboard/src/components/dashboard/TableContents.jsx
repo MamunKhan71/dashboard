@@ -33,7 +33,7 @@ export default function TableContents({ type, due, faculty, status }) {
                 </div>
             </td>
             <td>
-                <button className='btn btn-sm bg-[#272B8F] text-[#C4C7FF]'>{status}</button>
+                <button className={`btn btn-sm ${status === "Done" ? "bg-[#272B8F]" : "bg-[#AA571B]"} bg-[#272B8F] text-[#C4C7FF]`}>{status}</button>
             </td>
         </tr>
     )
