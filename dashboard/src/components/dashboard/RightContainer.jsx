@@ -1,8 +1,11 @@
 import React from 'react'
 import Navigation from './Navigation'
 import Card from './Card'
+import Progress from './Progress'
+import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
 
 export default function RightContainer() {
+    const data = [{ name: 'Page A', uv: 400, pv: 2400, amt: 2400 }, { name: 'Page A', uv: 300, pv: 2400, amt: 2400 }, { name: 'Page A', uv: 200, pv: 2400, amt: 2400 }, { name: 'Page A', uv: 500, pv: 2400, amt: 2400 }]
     return (
         <div className='py-12 px-6 w-full'>
             <Navigation />
@@ -13,64 +16,109 @@ export default function RightContainer() {
                     <Card headline={"Build Wireframes and Low-Fidelity Prototypes"} assignment={"4 Assignment"} videos={"20 videos"} percentage={85} />
                     <Card headline={"Build Wireframes and Low-Fidelity Prototypes"} assignment={"4 Assignment"} videos={"20 videos"} percentage={85} />
                 </div>
-                <div className='w-full'>
-                    <div className='flex gap-5 w-full'>
-                        <div className='bg-primary p-4 rounded-2xl  flex-1 space-y-5'>
-                            <div className='flex justify-between'>
-                                <h1 className='font-poppins text-black text-5xl font-semibold'>04</h1>
-                                <button className='btn btn-circle bg-white border-none'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="31" viewBox="0 0 32 31" fill="none">
-                                        <g clip-path="url(#clip0_5_181)">
-                                            <path d="M31.0524 11.0845V25.5351C31.0524 25.8678 30.9203 26.1868 30.685 26.4221C30.4498 26.6573 30.1307 26.7895 29.798 26.7895C29.4653 26.7895 29.1463 26.6573 28.911 26.4221C28.6758 26.1868 28.5436 25.8678 28.5436 25.5351V15.1889L19.2612 19.6244C18.2824 20.2021 17.1651 20.503 16.0286 20.4949C14.8368 20.4968 13.6666 20.1765 12.6418 19.568L3.38443 15.1613C2.65673 14.77 2.04701 14.1911 1.61853 13.4846C1.19004 12.7782 0.958409 11.97 0.947658 11.1438C0.936907 10.3176 1.14743 9.50364 1.55739 8.78629C1.96734 8.06893 2.56179 7.47435 3.27906 7.06424C3.31293 7.04417 3.3493 7.02535 3.38443 7.00779L12.7384 2.54469C13.7482 1.96473 14.8944 1.66427 16.0589 1.67419C17.2234 1.68411 18.3642 2.00406 19.364 2.60113L28.6151 7.00779C29.3451 7.41168 29.9551 8.00163 30.3832 8.71768C30.8113 9.43373 31.0422 10.2503 31.0524 11.0845ZM16.0274 23.0012C14.4225 23.0048 12.8452 22.5841 11.4551 21.7819L5.9647 19.1615V22.5484C5.96544 23.8875 6.39415 25.1913 7.18826 26.2695C7.98237 27.3477 9.1003 28.1439 10.3789 28.5418C12.2057 29.0663 14.0993 29.3212 15.9998 29.2982C17.9005 29.3195 19.7941 29.063 21.6207 28.5368C22.8993 28.1389 24.0172 27.3427 24.8113 26.2645C25.6054 25.1862 26.0341 23.8824 26.0349 22.5434V19.1678L20.4416 21.8397C19.0989 22.611 17.5758 23.0127 16.0274 23.0037V23.0012Z" fill="#4163E9" />
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_5_181">
-                                                <rect width="30.1053" height="30.1053" fill="white" transform="translate(0.947266 0.447388)" />
-                                            </clipPath>
-                                        </defs>
+                <div className='w-full space-y-5'>
+                    <Progress />
+                    <div className='w-full bg-primary p-5 rounded-2xl'>
+                        <div className='flex justify-between items-center'>
+                            <span className='text-lg font-semibold'>Course Activity</span>
+                            <div className='flex gap-2 font-semibold'>
+                                <div className='flex gap-2 items-center'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="9" viewBox="0 0 8 9" fill="none">
+                                        <circle cx="4" cy="4.5" r="4" fill="#4163E9" />
                                     </svg>
-                                </button>
+                                    <span>Video</span>
+                                </div>
+                                <div className='flex gap-2 items-center'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="9" viewBox="0 0 8 9" fill="none">
+                                        <circle cx="4" cy="4.5" r="4" fill="#1E2E69" />
+                                    </svg>
+                                    <span>Practice</span>
+                                </div>
                             </div>
-                            <div className='flex items-end justify-between'>
-                                <h1 className='text-[#072F33] font-medium opacity-70 font-poppins text-base'>Completed<br />Course</h1>
-                                <span className='flex gap-2 items-center'>
-                                    20% lncrease
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11" viewBox="0 0 14 11" fill="none">
-                                        <path d="M12.5606 0.5H10.3474C10.2056 0.500032 10.0669 0.545099 9.94902 0.629503C9.83111 0.713907 9.73921 0.833858 9.68494 0.974192C9.63067 1.11453 9.61647 1.26894 9.64413 1.41792C9.67179 1.5669 9.74007 1.70375 9.84033 1.81117L10.6192 2.64534L8.04739 5.39904C7.91074 5.53891 7.729 5.61696 7.53998 5.61696C7.35096 5.61696 7.16922 5.53891 7.03258 5.39904L6.91066 5.26769C6.50087 4.84835 5.95592 4.61435 5.38916 4.61435C4.8224 4.61435 4.27745 4.84835 3.86767 5.26769L0.210051 9.18508C0.0752891 9.32982 -0.000268279 9.52597 7.15787e-07 9.73037C0.00026971 9.93478 0.0763433 10.1307 0.211486 10.275C0.346628 10.4194 0.52977 10.5003 0.720622 10.5C0.911473 10.4997 1.0944 10.4182 1.22916 10.2735L4.88678 6.35611C5.02334 6.21606 5.20511 6.13789 5.39418 6.13789C5.58325 6.13789 5.76502 6.21606 5.90159 6.35611L6.02351 6.48746C6.43346 6.90644 6.97834 7.14021 7.545 7.14021C8.11166 7.14021 8.65654 6.90644 9.0665 6.48746L11.6383 3.733L12.4172 4.56717C12.5178 4.67282 12.6453 4.74438 12.7836 4.77291C12.922 4.80143 13.0652 4.78566 13.1953 4.72757C13.3253 4.66947 13.4365 4.57162 13.515 4.44624C13.5934 4.32086 13.6356 4.1735 13.6364 4.02258V1.65217C13.6364 1.3466 13.523 1.05354 13.3213 0.837464C13.1195 0.621389 12.8459 0.5 12.5606 0.5Z" fill="#072F33" />
-                                    </svg>
-                                </span>
+                            <div>
+                                <div className="dropdown dropdown-bottom font-semibold">
+                                    <div tabIndex={0} role="button" className="btn m-1 font-inter text-black bg-white border-none rounded-full">
+                                        Monthly
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8" fill="none">
+                                            <path d="M13.7108 0.70925C13.6178 0.615522 13.5072 0.541127 13.3854 0.490359C13.2635 0.43959 13.1328 0.413452 13.0008 0.413452C12.8688 0.413452 12.7381 0.43959 12.6162 0.490359C12.4944 0.541127 12.3838 0.615522 12.2908 0.70925L7.71079 5.28924C7.61783 5.38297 7.50723 5.45736 7.38537 5.50813C7.26351 5.5589 7.13281 5.58504 7.00079 5.58504C6.86878 5.58504 6.73808 5.5589 6.61622 5.50813C6.49436 5.45736 6.38376 5.38297 6.29079 5.28924L1.71079 0.70925C1.61783 0.615522 1.50723 0.541127 1.38537 0.490359C1.26351 0.43959 1.1328 0.413452 1.00079 0.413452C0.868781 0.413452 0.738075 0.43959 0.616216 0.490359C0.494357 0.541127 0.383756 0.615522 0.290792 0.70925C0.104542 0.896612 0 1.15006 0 1.41425C0 1.67843 0.104542 1.93188 0.290792 2.11925L4.88079 6.70924C5.44329 7.27104 6.20579 7.5866 7.00079 7.5866C7.7958 7.5866 8.55829 7.27104 9.12079 6.70924L13.7108 2.11925C13.897 1.93188 14.0016 1.67843 14.0016 1.41425C14.0016 1.15006 13.897 0.896612 13.7108 0.70925Z" fill="#072F33" />
+                                        </svg>
+                                    </div>
+                                    <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                                        <li><a>By Date</a></li>
+                                        <li><a>By Time</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                        <div className='bg-primary p-4 rounded-2xl  flex-1 space-y-5'>
-                            <div className='flex justify-between'>
-                                <h1 className='font-poppins text-black text-5xl font-semibold'>12</h1>
-                                <button className='btn btn-circle bg-white border-none'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
-                                        <g clip-path="url(#clip0_5_216)">
-                                            <path d="M5.64797 13.7963H24.9072C31.258 13.6301 31.2532 4.33153 24.9072 4.16663H5.64797C-0.702772 4.33274 -0.697957 13.6313 5.64797 13.7963ZM27.3146 8.98144C27.3146 10.3091 26.2349 11.3888 24.9072 11.3888H20.0924V6.57403H24.9072C26.2349 6.57403 27.3146 7.65376 27.3146 8.98144ZM24.9072 16.2037H5.64797C-0.702772 16.3698 -0.697957 25.6684 5.64797 25.8333H24.9072C31.258 25.6672 31.2532 16.3686 24.9072 16.2037ZM24.9072 23.4259H12.8702V18.6111H24.9072C28.0718 18.6688 28.0694 23.3693 24.9072 23.4259Z" fill="#4163E9" />
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_5_216">
-                                                <rect width="28.8889" height="28.8889" fill="white" transform="translate(0.833252 0.555542)" />
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </button>
+                        <div className='w-full'>
+                            <BarChart width={750} height={300} data={data}>
+                                <XAxis dataKey="name" stroke="#061758" />
+                                <YAxis />
+                                <Tooltip />
+                                <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+                                <Bar dataKey="uv" fill="#061758" barSize={30} />
+                            </BarChart>
+                        </div>
+                    </div>
+                    <div className='w-full bg-primary p-5 rounded-2xl'>
+                        <div className='flex justify-between items-center'>
+                            <span className='text-lg font-semibold'>Reminders</span>
+                            <div>
+                                <div className="dropdown dropdown-bottom font-semibold">
+                                    <div tabIndex={0} role="button" className="btn m-1 font-inter text-black bg-white border-none rounded-full">
+                                        Monthly
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8" fill="none">
+                                            <path d="M13.7108 0.70925C13.6178 0.615522 13.5072 0.541127 13.3854 0.490359C13.2635 0.43959 13.1328 0.413452 13.0008 0.413452C12.8688 0.413452 12.7381 0.43959 12.6162 0.490359C12.4944 0.541127 12.3838 0.615522 12.2908 0.70925L7.71079 5.28924C7.61783 5.38297 7.50723 5.45736 7.38537 5.50813C7.26351 5.5589 7.13281 5.58504 7.00079 5.58504C6.86878 5.58504 6.73808 5.5589 6.61622 5.50813C6.49436 5.45736 6.38376 5.38297 6.29079 5.28924L1.71079 0.70925C1.61783 0.615522 1.50723 0.541127 1.38537 0.490359C1.26351 0.43959 1.1328 0.413452 1.00079 0.413452C0.868781 0.413452 0.738075 0.43959 0.616216 0.490359C0.494357 0.541127 0.383756 0.615522 0.290792 0.70925C0.104542 0.896612 0 1.15006 0 1.41425C0 1.67843 0.104542 1.93188 0.290792 2.11925L4.88079 6.70924C5.44329 7.27104 6.20579 7.5866 7.00079 7.5866C7.7958 7.5866 8.55829 7.27104 9.12079 6.70924L13.7108 2.11925C13.897 1.93188 14.0016 1.67843 14.0016 1.41425C14.0016 1.15006 13.897 0.896612 13.7108 0.70925Z" fill="#072F33" />
+                                        </svg>
+                                    </div>
+                                    <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                                        <li><a>By Date</a></li>
+                                        <li><a>By Time</a></li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div className='flex items-end justify-between'>
-                                <h1 className='text-[#072F33] font-medium opacity-70 font-poppins text-base'>Course
-                                    <br />in Progress</h1>
-                                <span className='flex gap-2 items-center'>
-                                    1% Decrease
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11" viewBox="0 0 14 11" fill="none">
-                                        <path d="M12.5606 10.5H10.3474C10.2056 10.5 10.0669 10.4549 9.94902 10.3705C9.83111 10.2861 9.73921 10.1661 9.68494 10.0258C9.63067 9.88547 9.61647 9.73106 9.64413 9.58208C9.67179 9.4331 9.74007 9.29625 9.84033 9.18883L10.6192 8.35466L8.04739 5.60096C7.91074 5.46109 7.729 5.38304 7.53998 5.38304C7.35096 5.38304 7.16922 5.46109 7.03258 5.60096L6.91066 5.73231C6.50087 6.15165 5.95592 6.38565 5.38916 6.38565C4.8224 6.38565 4.27745 6.15165 3.86767 5.73231L0.210051 1.81492C0.0752891 1.67018 -0.000268279 1.47403 7.15787e-07 1.26963C0.00026971 1.06522 0.0763433 0.869303 0.211486 0.72497C0.346628 0.580637 0.52977 0.499712 0.720622 0.5C0.911473 0.500288 1.0944 0.581764 1.22916 0.726505L4.88678 4.64389C5.02334 4.78394 5.20511 4.86211 5.39418 4.86211C5.58325 4.86211 5.76502 4.78394 5.90159 4.64389L6.02351 4.51254C6.43346 4.09356 6.97834 3.85979 7.545 3.85979C8.11166 3.85979 8.65654 4.09356 9.0665 4.51254L11.6383 7.267L12.4172 6.43283C12.5178 6.32718 12.6453 6.25562 12.7836 6.22709C12.922 6.19857 13.0652 6.21434 13.1953 6.27243C13.3253 6.33053 13.4365 6.42838 13.515 6.55376C13.5934 6.67914 13.6356 6.8265 13.6364 6.97742V9.34783C13.6364 9.6534 13.523 9.94646 13.3213 10.1625C13.1195 10.3786 12.8459 10.5 12.5606 10.5Z" fill="#072F33" />
-                                    </svg>
-                                </span>
+                        </div>
+                        <div className='w-full'>
+                            <div className="overflow-x-auto">
+                                <table className="table">
+                                    {/* head */}
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Name</th>
+                                            <th>Job</th>
+                                            <th>Favorite Color</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {/* row 1 */}
+                                        <tr>
+                                            <th>1</th>
+                                            <td>Cy Ganderton</td>
+                                            <td>Quality Control Specialist</td>
+                                            <td>Blue</td>
+                                        </tr>
+                                        {/* row 2 */}
+                                        <tr>
+                                            <th>2</th>
+                                            <td>Hart Hagerty</td>
+                                            <td>Desktop Support Technician</td>
+                                            <td>Purple</td>
+                                        </tr>
+                                        {/* row 3 */}
+                                        <tr>
+                                            <th>3</th>
+                                            <td>Brice Swyre</td>
+                                            <td>Tax Accountant</td>
+                                            <td>Red</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
-
                 </div>
+
             </div>
         </div>
     )
