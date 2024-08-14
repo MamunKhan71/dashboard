@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function LeftContainer() {
     return (
-        <div className='w-64 bg-primary h-screen p-12'>
+        <div className='w-64 bg-primary h-auto p-12'>
             {/* logo section start*/}
             <div className='flex items-center justify-center gap-3 px-2'>
                 <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
