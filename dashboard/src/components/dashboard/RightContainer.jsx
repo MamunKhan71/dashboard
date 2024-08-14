@@ -3,6 +3,7 @@ import Navigation from './Navigation'
 import Card from './Card'
 import Progress from './Progress'
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
+import TableContents from './TableContents';
 
 export default function RightContainer() {
     const data = [{ name: 'Page A', uv: 400, pv: 2400, amt: 2400 }, { name: 'Page A', uv: 300, pv: 2400, amt: 2400 }, { name: 'Page A', uv: 200, pv: 2400, amt: 2400 }, { name: 'Page A', uv: 500, pv: 2400, amt: 2400 }]
@@ -82,36 +83,24 @@ export default function RightContainer() {
                             <div className="overflow-x-auto">
                                 <table className="table">
                                     {/* head */}
-                                    <thead>
+                                    <thead className='text-[072F33] font-inter'>
                                         <tr>
-                                            <th></th>
-                                            <th>Name</th>
-                                            <th>Job</th>
-                                            <th>Favorite Color</th>
+                                            <th>Type</th>
+                                            <th>Due</th>
+                                            <th>Faculty</th>
+                                            <th>Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         {/* row 1 */}
-                                        <tr>
-                                            <th>1</th>
-                                            <td>Cy Ganderton</td>
-                                            <td>Quality Control Specialist</td>
-                                            <td>Blue</td>
-                                        </tr>
+                                        <TableContents type={"Assignment - 1"} due={"5 June 2024"} faculty={"Same Jhon"} status={"Done"} />
                                         {/* row 2 */}
-                                        <tr>
-                                            <th>2</th>
-                                            <td>Hart Hagerty</td>
-                                            <td>Desktop Support Technician</td>
-                                            <td>Purple</td>
-                                        </tr>
-                                        {/* row 3 */}
-                                        <tr>
-                                            <th>3</th>
-                                            <td>Brice Swyre</td>
-                                            <td>Tax Accountant</td>
-                                            <td>Red</td>
-                                        </tr>
+                                        <TableContents type={"Quiz- 2"} due={"5 Aug 2024"} faculty={"Jhon Ab"} status={"Coming"} />
+                                        <TableContents type={"Last Class"} due={"5 June 2024"} faculty={"Kabir Same"} status={"Done"} />
+                                        <TableContents type={"Quiz- 2"} due={"5 June 2024"} faculty={"Lee Jhon"} status={"Coming"} />
+                                        <TableContents type={"Assignment -4"} due={"5 June 2024"} faculty={"Abraham Leo"} status={"Dpne"} />
+                                        <TableContents type={"Last Class"} due={"5 June 2024"} faculty={"Atik Saw"} status={"Dpne"} />
+
                                     </tbody>
                                 </table>
                             </div>
